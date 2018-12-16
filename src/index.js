@@ -6,6 +6,7 @@ import thunk from 'redux-thunk'
 import reducer from './reducers'
 import App from './containers/App'
 
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.css'
 
 const middleware = [thunk]

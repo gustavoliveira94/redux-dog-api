@@ -1,4 +1,6 @@
 import React from 'react'
+import {Button, Input, FormGroup, Label} from 'reactstrap'
+
 import {requestDog} from '../actions'
 
 class SearchBox extends React.Component {
@@ -21,14 +23,22 @@ class SearchBox extends React.Component {
   render() {
     return (
       <React.Fragment>
-        Find:{' '}
-        <input
-          type="text"
-          name="name"
-          value={this.state.name}
-          onChange={this.handleChange}
-        />
-        <button onClick={this.handleSubmit}>Buscar</button>
+        <FormGroup>
+          <Label for="name">
+            Find a random dog image from a breed, e.g. hound
+          </Label>
+          <Input
+            id="name"
+            type="text"
+            name="name"
+            value={this.state.name}
+            placeholder="Example: Rottweiler"
+            onChange={this.handleChange}
+          />
+        </FormGroup>
+        <Button color="primary" onClick={this.handleSubmit}>
+          Find Doggy!
+        </Button>
       </React.Fragment>
     )
   }

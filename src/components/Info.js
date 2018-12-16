@@ -1,16 +1,37 @@
 import React from 'react'
 
 function Info({dogs}) {
-  console.log('Dogs:', dogs)
   if (dogs.loading) {
-    return 'Loading...'
+    return (
+      <p
+        style={{
+          marginTop: '50px',
+          textAlign: 'center',
+          fontSize: '28px'
+        }}
+      >
+        Loading...
+      </p>
+    )
   } else {
     return (
       <div>
         {dogs.data.status === 'success' ? (
-          <img src={dogs.data.message} alt="doggy" />
+          <img
+            style={{marginTop: '50px'}}
+            src={dogs.data.message}
+            alt="doggy"
+          />
         ) : (
-          <p>{dogs.data.message}</p>
+          <p
+            style={{
+              marginTop: '50px',
+              textAlign: 'center',
+              fontSize: '28px'
+            }}
+          >
+            {dogs.data.message}
+          </p>
         )}
       </div>
     )
